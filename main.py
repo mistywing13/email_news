@@ -7,6 +7,7 @@ url = "https://newsapi.org/v2/everything?q=tesla"\
         "47b58d96d390496ba812ede756203653"
 
 request = requests.get(url)
-content = request.text
+content = request.json()
 
-print(content)
+for article in content["articles"]:
+  print(article['title'])
